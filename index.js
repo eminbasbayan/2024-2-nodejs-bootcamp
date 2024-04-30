@@ -1,1 +1,3 @@
-console.log("Hello World!");
+require("./add")
+
+// console.log("Hello World!");
