@@ -1,10 +1,12 @@
-function helloFn(name) {
-  console.log(`Hello, ${name}`);
-}
+const EventEmitter = require("node:events");
 
-function helloName(callbackFn) {
-  const name = "Emin";
-  callbackFn(name);
-}
+// Yeni bir event yayıncısı (emitter) oluştur
+const eventEmitter = new EventEmitter();
 
-helloName(helloFn);
+// Özel bir event dinleyicisi ekleyin
+eventEmitter.on("hello", () => {
+  console.log("Hello World!");
+});
+
+// "hello" eventini tetikle
+eventEmitter.emit("hello");
