@@ -3,10 +3,17 @@ const EventEmitter = require("node:events");
 // Yeni bir event yayıncısı (emitter) oluştur
 const eventEmitter = new EventEmitter();
 
-// Özel bir event dinleyicisi ekleyin
-eventEmitter.on("hello", () => {
-  console.log("Hello World!");
+eventEmitter.on("orderPizza", (size, topping, quantity) => {
+  console.log(
+    `${quantity} adet ${size} boyutunda pizza pişiriliyor. İçindekiler: ${topping}`
+  );
 });
 
-// "hello" eventini tetikle
-eventEmitter.emit("hello");
+// large ise: ücretsiz içecek servisi kazandınız.
+eventEmitter.on("orderPizza", (size)=>{
+    if(size === "large"){
+        console.log("Ücretsiz içecek servisi kazandınız.");
+    }
+})
+
+eventEmitter.emit("orderPizza", "large", "mantar, sucuk, sosis, mısır", 5);
