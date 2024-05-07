@@ -1,9 +1,13 @@
-const buffer = new Buffer("BilGen");
+const fs = require("node:fs");
 
-buffer.write("Emin");
+const readableStream = fs.createReadStream("./file.txt", {
+  encoding: "utf-8",
+  highWaterMark: 2,
+});
 
-console.log(buffer);
-// console.log(buffer.toString("hex"));
-// console.log(buffer.toString("ascii"));
-console.log(buffer.toString());
-console.log(buffer.toJSON());
+const writeableStream = fs.createWriteStream("./file3.txt");
+
+readableStream.on("data", (chunk) => {
+  console.log(chunk);
+  writeableStream.write(chunk);
+});
