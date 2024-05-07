@@ -1,27 +1,9 @@
-const fs = require("node:fs").promises;
-// const fs = require("node:fs/promises");
+const buffer = new Buffer("BilGen");
 
-// fs.readFile("./file.txt", "utf-8")
-//   .then((data) => console.log(data))
-//   .catch((err) => console.log(err))
-//   .finally(() => console.log("işlem tamamlandı!"));
+buffer.write("Emin");
 
-const readFile = async () => {
-  try {
-    const data = await fs.readFile("./file.txt");
-    console.log(data);
-    return "Emin";
-  } catch (err) {
-    console.log(err);
-  } finally {
-    console.log("işlem tamamlandı");
-  }
-};
-
-readFile()
-  .then((data) => {
-    return data;
-  })
-  .then((data) => console.log(data));
-
-console.log("async");
+console.log(buffer);
+// console.log(buffer.toString("hex"));
+// console.log(buffer.toString("ascii"));
+console.log(buffer.toString());
+console.log(buffer.toJSON());
