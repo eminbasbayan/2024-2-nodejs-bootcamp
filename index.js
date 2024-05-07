@@ -1,20 +1,29 @@
+// 1- fs modülünü kullanarak, belirli bir dizindeki bir dosyayı okuyun. Bu dosya, basit bir metin dosyası olabilir.
+
+// 2- Dosyanın içeriğini konsola yazdırın.
+// path modülünü kullanarak, dosyanın tam yolunu (absolute path) hesaplayın ve bu yolu konsola yazdırın.
+
+// 3- Dosyanın adını ve uzantısını ayırarak konsola yazdırın.
+
 const fs = require("node:fs");
-const zlib = require("node:zlib");
+const path = require("node:path");
 
-const gzip = zlib.createGzip();
+// Dosya yolu
+const dosyaYolu = path.join(__dirname, "file.txt");
 
-const readableStream = fs.createReadStream("./file.txt", {
-  encoding: "utf-8",
-  highWaterMark: 2,
+// Dosya okuma
+fs.readFile(dosyaYolu, "utf-8", (err, data) => {
+  if (err) {
+    console.log("Dosya okunurken bir hata oluştu:", hata);
+    return;
+  }
+  console.log("Dosya içeriği:", data);
 });
 
-readableStream.pipe(gzip).pipe(fs.WriteStream("./file3.txt.gz"));
+// Tam yolu
+console.log("Tam dosya yolu:", dosyaYolu);
 
-// const writeableStream = fs.createWriteStream("./file3.txt");
+// Dosya adı ve uzantısı
+console.log("Dosya adı:", path.basename(dosyaYolu));
+console.log("Dosya uzantısı:", path.extname(dosyaYolu));
 
-// readableStream.pipe(writeableStream);
-
-// readableStream.on("data", (chunk) => {
-//   console.log(chunk);
-//   writeableStream.write(chunk);
-// });
