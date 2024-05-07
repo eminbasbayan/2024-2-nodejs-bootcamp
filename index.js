@@ -2,14 +2,11 @@ const http = require("node:http");
 const fs = require("node:fs");
 
 const server = http.createServer((request, response) => {
-  const person = {
-    firstName: "Emin",
-    lastName: "Başbayan",
-  };
+  const name = "Arda";
 
   response.writeHead(200, { "Content-Type": "text/html" });
-  // fs.createReadStream(__dirname + "/index.html").pipe(response);
-  const html = fs.readFileSync("./index.html", "utf-8");
+  let html = fs.readFileSync("./index.html", "utf-8");
+  html = html.replace("{{name}}", name);
   response.end(html);
 });
 
