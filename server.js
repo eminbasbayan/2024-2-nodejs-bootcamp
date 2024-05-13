@@ -2,11 +2,11 @@ const express = require("express");
 const app = express();
 const path = require("node:path");
 
-app.get("/", (req, res) => {
+app.get("^/$|index(.html)?", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "views", "index.html"));
 });
 
-app.get("/products", (req, res) => {
+app.get("/products(.html)?", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "views", "products.html"));
 });
 
