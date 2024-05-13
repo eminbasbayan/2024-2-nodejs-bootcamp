@@ -30,8 +30,12 @@ app.get("/api/customers", (req, res) => {
   ]);
 });
 
-app.use((req, res) => {
-  res.status(404).send("Page not found!");
+// app.use((req, res) => {
+//   res.status(404).send("Page not found!");
+// });
+
+app.all("*", (req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
 
 const port = 3000;
