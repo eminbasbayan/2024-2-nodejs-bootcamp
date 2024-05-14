@@ -10,21 +10,19 @@ let users = [
   { id: 5, name: "Ali", age: 35, email: "ali@example.com" },
 ];
 
+// Middleware to parse JSON bodies
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.json(users);
 });
 
 app.post("/", (req, res) => {
-  const newUser = {
-    id: 6,
-    name: "Emin",
-    age: 26,
-    email: "eminbasbayan@bilgentech.com",
-  };
+  const newUser = req.body;
   users = [...users, newUser];
   res.json(users);
 });
-  
+
 app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
