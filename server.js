@@ -1,47 +1,55 @@
 const express = require("express");
+const fs = require("fs");
 const app = express();
 const path = require("node:path");
-
-let users = [
-  { id: 1, name: "Ahmet", age: 25, email: "ahmet@example.com" },
-  { id: 2, name: "Ayşe", age: 30, email: "ayse@example.com" },
-  { id: 3, name: "Mehmet", age: 28, email: "mehmet@example.com" },
-  { id: 4, name: "Fatma", age: 22, email: "fatma@example.com" },
-  { id: 5, name: "Ali", age: 35, email: "ali@example.com" },
-];
 
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+const filePath = "data.json";
+
+const readData = () => {
+  const jsonData = fs.readFileSync(filePath);
+  return JSON.parse(jsonData);
+};
+
+const writeData = (users) => {
+  fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+};
+
 // read
 app.get("/", (req, res) => {
-  res.json(users);
+  const data = readData();
+  res.json(data);
 });
 
 // create
 app.post("/", (req, res) => {
   const newUser = req.body;
+  let users = readData();
   users = [...users, newUser];
-  res.json(users);
+  fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+  res.status(201).json(users);
 });
 
 // update
 app.put("/:id", (req, res) => {
   const { id } = req.params;
-  const { name } = req.body;
-  users = users.map((user) => {
-    if (user.id === Number(id)) {
-      return { ...user, name };
-    }
-    return user;
-  });
+  const updatedData = req.body;
+  let users = readData();
+  users = users.map((user) =>
+    user.id === Number(id) ? { ...user, ...updatedData } : user
+  );
+  writeData(users);
   res.json(users);
 });
 
 // delete
 app.delete("/:id", (req, res) => {
   const id = req.params.id;
+  let users = readData();
   users = users.filter((user) => user.id !== Number(id));
+  writeData(users);
   res.status(204).json(users);
 });
 

@@ -1,7 +1,21 @@
-{
-  "name": "Emin Başbayan",
-  "address": {
-    "country": "Turkey",
-    "city": "İstanbul"
+[
+  {
+    "id": 1,
+    "name": "Emin",
+    "age": 25,
+    "email": "ahmet@example.com"
+  },
+  {
+    "id": 2,
+    "name": "Ayşe",
+    "age": 30,
+    "email": "ayse@example.com"
+  },
+  {
+    "id": 4,
+    "name": "Emre",
+    "age": 22,
+    "email": "fatma@example.com",
+    "city": "Ankara"
   }
-}
+]
