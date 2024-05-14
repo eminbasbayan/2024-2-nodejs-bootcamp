@@ -33,11 +33,15 @@ app.get("/api/customers", (req, res) => {
 app.get(
   "/admin.html",
   (req, res, next) => {
-    console.log("Hello World!");
+    req.customData = "Emin Başbayan";
     next();
   },
   (req, res, next) => {
-    res.send("Hello Admin!");
+    console.log(req.customData);
+    next();
+  },
+  (req, res) => {
+    res.send("Finish!");
   }
 );
 
