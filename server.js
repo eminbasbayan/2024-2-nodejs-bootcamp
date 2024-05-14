@@ -30,9 +30,16 @@ app.get("/api/customers", (req, res) => {
   ]);
 });
 
-// app.use((req, res) => {
-//   res.status(404).send("Page not found!");
-// });
+app.get(
+  "/admin.html",
+  (req, res, next) => {
+    console.log("Hello World!");
+    next();
+  },
+  (req, res, next) => {
+    res.send("Hello Admin!");
+  }
+);
 
 app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
