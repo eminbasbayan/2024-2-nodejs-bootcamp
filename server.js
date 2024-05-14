@@ -13,13 +13,28 @@ let users = [
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+// read
 app.get("/", (req, res) => {
   res.json(users);
 });
 
+// create
 app.post("/", (req, res) => {
   const newUser = req.body;
   users = [...users, newUser];
+  res.json(users);
+});
+
+// update
+app.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+  users = users.map((user) => {
+    if (user.id === Number(id)) {
+      return { ...user, name };
+    }
+    return user;
+  });
   res.json(users);
 });
 
