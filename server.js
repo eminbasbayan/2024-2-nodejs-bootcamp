@@ -38,6 +38,13 @@ app.put("/:id", (req, res) => {
   res.json(users);
 });
 
+// delete
+app.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  users = users.filter((user) => user.id !== Number(id));
+  res.status(204).json(users);
+});
+
 app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
