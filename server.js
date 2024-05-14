@@ -2,48 +2,17 @@ const express = require("express");
 const app = express();
 const path = require("node:path");
 
-app.get("^/$|index(.html)?", (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, "views", "index.html"));
-});
+const users = [
+  { id: 1, name: "Ahmet", age: 25, email: "ahmet@example.com" },
+  { id: 2, name: "Ayşe", age: 30, email: "ayse@example.com" },
+  { id: 3, name: "Mehmet", age: 28, email: "mehmet@example.com" },
+  { id: 4, name: "Fatma", age: 22, email: "fatma@example.com" },
+  { id: 5, name: "Ali", age: 35, email: "ali@example.com" },
+];
 
-app.get("/products(.html)?", (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, "views", "products.html"));
+app.get("/", (req, res) => {
+  res.json(users);
 });
-
-app.get("/new-page.html", (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, "views", "new-page.html"));
-});
-
-app.get("/old-page", (req, res) => {
-  res.redirect(301, "/new-page.html");
-});
-
-app.get("/api/customers", (req, res) => {
-  res.status(200).json([
-    {
-      name: "Emin Başbayan",
-      address: {
-        country: "Turkey",
-        city: "İstanbul",
-      },
-    },
-  ]);
-});
-
-app.get(
-  "/admin.html",
-  (req, res, next) => {
-    req.customData = "Emin Başbayan";
-    next();
-  },
-  (req, res, next) => {
-    console.log(req.customData);
-    next();
-  },
-  (req, res) => {
-    res.send("Finish!");
-  }
-);
 
 app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
