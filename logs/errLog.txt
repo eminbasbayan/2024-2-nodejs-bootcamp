@@ -8,3 +8,4 @@
 20240520	23:46:41	ff74808a-e515-49bc-9163-6a18ce398845	ReferenceError: ___dirname is not defined
 20240520	23:46:41	cb83fc0a-b530-454f-9495-3bf967b3246b	ReferenceError: ___dirname is not defined
 20240520	23:46:41	9d19af92-64ab-4db6-ac22-ea33573d1f85	ReferenceError: ___dirname is not defined
+20240520	23:57:24	885fd4a3-b094-48ed-ada9-715398ffef7b	Error: Bu adrese izin verilmedi!

@@ -1,0 +1,9 @@
+
+20240520	23:55:07	39523075-4a60-4888-9d2b-ae383aef011c	GET	undefined	/
+20240520	23:55:33	d899e145-371e-4207-bb27-373ef7daefb7	OPTIONS	https://www.google.com.tr	/
+20240520	23:55:33	ae6824d3-f7c1-44c4-8169-c4af0ea7b0d9	GET	https://www.google.com.tr	/
+20240520	23:56:01	0c8c4e0d-119f-43d2-814f-207ad62b6573	OPTIONS	https://www.google.com.tr	/api/users/get-all
+20240520	23:56:01	c73597f2-68e5-407e-bed9-8eac23c55c75	GET	https://www.google.com.tr	/api/users/get-all
+20240520	23:57:24	a4bca53f-348d-4d88-a285-c7b29e63afc6	GET	http://127.0.0.1:5500	/api/users/get-all
+20240520	23:57:42	80fba509-3241-4529-97ae-a0c83def8208	GET	http://127.0.0.1:5500	/api/users/get-all
+20240520	23:57:57	1d45ac46-91fc-4b38-936f-7d4d031e60da	GET	http://127.0.0.1:5500	/api/users/get-all

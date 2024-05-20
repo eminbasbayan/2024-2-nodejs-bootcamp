@@ -4,13 +4,16 @@ const cors = require("cors");
 const fs = require("fs");
 const app = express();
 const errorHandler = require("./middleware/errorHandler");
-const logEvents = require("./middleware/logEvents");
+const reqHandler = require("./middleware/reqHandler");
 
 const whiteList = [
   "https://www.google.com.tr",
   "https://bilgisayargenetigi.com",
   "http://localhost:3000",
+  "http://127.0.0.1:5500",
 ];
+
+app.use(reqHandler);
 
 const corsOptions = {
   origin: (origin, callback) => {
