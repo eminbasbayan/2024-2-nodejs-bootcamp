@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const app = express();
+const errorHandler = require("./middleware/errorHandler");
+const logEvents = require("./middleware/logEvents");
 
 const whiteList = [
   "https://www.google.com.tr",
@@ -93,6 +95,10 @@ app.delete("/api/users/:id", (req, res) => {
 app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
+
+logEvents("istek atıldı!");
+
+app.use(errorHandler);
 
 const port = 3000;
 app.listen(port, () => {
