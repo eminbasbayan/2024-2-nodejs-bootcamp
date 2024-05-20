@@ -1,10 +1,14 @@
+const path = require("node:path");
 const express = require("express");
+const cors = require("cors");
 const fs = require("fs");
 const app = express();
-const path = require("node:path");
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+
+// Cross Origin Resource Sharing (CORS)
+app.use(cors());
 
 const filePath = "data.json";
 
@@ -16,6 +20,8 @@ const readData = () => {
 const writeData = (users) => {
   fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 };
+
+//! CRUD
 
 // read
 app.get("/", (req, res) => {
