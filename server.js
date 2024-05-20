@@ -4,11 +4,26 @@ const cors = require("cors");
 const fs = require("fs");
 const app = express();
 
+const whiteList = [
+  "https://www.google.com.tr",
+  "https://bilgisayargenetigi.com",
+]; 
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whiteList.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Bu adrese izin verilmedi!"));
+    }
+  },
+};
+
 // Middleware to parse JSON bodies
 app.use(express.json());
 
 // Cross Origin Resource Sharing (CORS)
-app.use(cors());
+app.use(cors(corsOptions));
 
 const filePath = "data.json";
 
