@@ -39,13 +39,13 @@ const writeData = (users) => {
 //! CRUD
 
 // read
-app.get("/", (req, res) => {
+app.get("/api/users/get-all", (req, res) => {
   const data = readData();
   res.json(data);
 });
 
 // create
-app.post("/", (req, res) => {
+app.post("/api/users/create", (req, res) => {
   const newUser = req.body;
   let users = readData();
   users = [...users, newUser];
@@ -54,7 +54,7 @@ app.post("/", (req, res) => {
 });
 
 // update
-app.put("/:id", (req, res) => {
+app.put("/api/users/:id", (req, res) => {
   const { id } = req.params;
   const updatedData = req.body;
   let users = readData();
@@ -66,7 +66,7 @@ app.put("/:id", (req, res) => {
 });
 
 // delete
-app.delete("/:id", (req, res) => {
+app.delete("/api/users/:id", (req, res) => {
   const id = req.params.id;
   let users = readData();
   users = users.filter((user) => user.id !== Number(id));
