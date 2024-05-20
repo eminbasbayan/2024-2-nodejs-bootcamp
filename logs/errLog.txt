@@ -1,0 +1,10 @@
+
+20240520	23:46:30	5c074045-2679-4883-81dc-71d8c38ee5b2	ReferenceError: ___dirname is not defined
+20240520	23:46:31	bcf20a1d-6689-45fe-94e9-2dfe09e14f2e	ReferenceError: ___dirname is not defined
+20240520	23:46:40	348dc30d-519b-4ad2-aaca-1aa0500026c9	ReferenceError: ___dirname is not defined
+20240520	23:46:41	e1b76cbe-63dc-4459-8342-6633d1a06c2e	ReferenceError: ___dirname is not defined
+20240520	23:46:41	bd415bcc-ed86-4994-a888-a7738e189a05	ReferenceError: ___dirname is not defined
+20240520	23:46:41	86a583c6-0793-44d1-96cd-2eb5e30929fd	ReferenceError: ___dirname is not defined
+20240520	23:46:41	ff74808a-e515-49bc-9163-6a18ce398845	ReferenceError: ___dirname is not defined
+20240520	23:46:41	cb83fc0a-b530-454f-9495-3bf967b3246b	ReferenceError: ___dirname is not defined
+20240520	23:46:41	9d19af92-64ab-4db6-ac22-ea33573d1f85	ReferenceError: ___dirname is not defined

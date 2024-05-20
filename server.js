@@ -96,8 +96,6 @@ app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
 
-logEvents("istek atıldı!");
-
 app.use(errorHandler);
 
 const port = 3000;
