@@ -7,7 +7,8 @@ const app = express();
 const whiteList = [
   "https://www.google.com.tr",
   "https://bilgisayargenetigi.com",
-]; 
+  "http://localhost:3000",
+];
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -25,6 +26,9 @@ app.use(express.json());
 // Cross Origin Resource Sharing (CORS)
 app.use(cors(corsOptions));
 
+// form verilerini ayrıştırmak için middleware
+app.use(express.urlencoded({ extended: false }));
+
 const filePath = "data.json";
 
 const readData = () => {
@@ -35,6 +39,18 @@ const readData = () => {
 const writeData = (users) => {
   fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 };
+
+// index.html dosyasını işleyen route
+app.get("/", (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, "views", "index.html"));
+});
+
+// form verilerini işleyen route
+app.post("/submit-form", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  res.send(`Username: ${username}, Password: ${password}`);
+});
 
 //! CRUD
 
