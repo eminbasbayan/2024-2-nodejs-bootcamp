@@ -13,3 +13,12 @@
 20240521	22:39:45	54bdff15-b7b8-434b-9320-ccf0af3073d6	GET	undefined	/api/users
 20240521	22:40:14	de42f759-67cf-4edf-bf6c-c7d34df759cc	GET	undefined	/api/users/get-all
 20240521	22:51:03	9b133fa6-14b2-4ff3-bfbd-02747813a7af	GET	undefined	/products
+20240521	22:55:30	5aa67c46-e5e7-4fe6-b020-b1aaf590a938	POST	undefined	/products
+20240521	22:55:37	a121ce90-6e5c-41f3-a712-69aca446aa63	GET	undefined	/products
+20240521	22:56:45	3d12235f-5b89-400e-b511-45c2ddb3886b	PUT	undefined	/products
+20240521	22:57:11	d45736f1-70c2-49d8-b27f-17c0f5f07f35	PUT	undefined	/products
+20240521	22:58:40	edf30d34-0b1b-465b-aef6-ac523912068b	DELETE	undefined	/products
+20240521	23:02:44	4e2f1862-4dc2-4798-b72a-fd80c101a1fd	GET	undefined	/products/2
+20240521	23:02:53	cbb292f8-3057-46f3-88cd-5e0c1e902e9b	GET	undefined	/products/10
+20240521	23:02:55	90ba65fd-e130-4afc-80bc-b72396bb831f	GET	undefined	/products/100
+20240521	23:03:07	770f427b-ba8f-4273-b385-7a98a7a868f7	GET	undefined	/products/100
