@@ -7,3 +7,9 @@
 20240520	23:57:24	a4bca53f-348d-4d88-a285-c7b29e63afc6	GET	http://127.0.0.1:5500	/api/users/get-all
 20240520	23:57:42	80fba509-3241-4529-97ae-a0c83def8208	GET	http://127.0.0.1:5500	/api/users/get-all
 20240520	23:57:57	1d45ac46-91fc-4b38-936f-7d4d031e60da	GET	http://127.0.0.1:5500	/api/users/get-all
+20240521	22:25:45	7864b569-9930-4923-b91b-d851ee0b5cf3	GET	undefined	/
+20240521	22:39:32	0b22dd3f-4bf8-4b51-a294-b9ca79094397	GET	undefined	/
+20240521	22:39:43	c1c831d4-2038-4a84-ab01-8efd69d1151a	GET	undefined	/api
+20240521	22:39:45	54bdff15-b7b8-434b-9320-ccf0af3073d6	GET	undefined	/api/users
+20240521	22:40:14	de42f759-67cf-4edf-bf6c-c7d34df759cc	GET	undefined	/api/users/get-all
+20240521	22:51:03	9b133fa6-14b2-4ff3-bfbd-02747813a7af	GET	undefined	/products
