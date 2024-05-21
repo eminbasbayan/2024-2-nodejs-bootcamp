@@ -22,3 +22,7 @@
 20240521	23:02:53	cbb292f8-3057-46f3-88cd-5e0c1e902e9b	GET	undefined	/products/10
 20240521	23:02:55	90ba65fd-e130-4afc-80bc-b72396bb831f	GET	undefined	/products/100
 20240521	23:03:07	770f427b-ba8f-4273-b385-7a98a7a868f7	GET	undefined	/products/100
+20240521	23:13:38	db0393af-4ab4-4ebb-9056-103b72ae85d6	GET	undefined	/products/10
+20240521	23:13:42	a9792892-cc2a-4933-b1f3-2c543d52cc5f	GET	undefined	/
+20240521	23:13:47	d37f8eee-3226-4943-8767-007cdaa728fe	GET	undefined	/products
+20240521	23:13:53	f2f803f3-ae27-4322-8171-10b86052ebc8	GET	undefined	/products/6
