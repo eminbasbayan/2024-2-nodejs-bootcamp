@@ -26,3 +26,9 @@
 20240521	23:13:42	a9792892-cc2a-4933-b1f3-2c543d52cc5f	GET	undefined	/
 20240521	23:13:47	d37f8eee-3226-4943-8767-007cdaa728fe	GET	undefined	/products
 20240521	23:13:53	f2f803f3-ae27-4322-8171-10b86052ebc8	GET	undefined	/products/6
+20240527	21:36:51	2b800023-e72b-4424-8e86-27942c19bcf8	GET	undefined	/
+20240527	21:36:52	8bb04eb9-fc16-46ab-829f-52006cde5fa0	GET	undefined	/favicon.ico
+20240527	21:37:11	40314a55-38c0-4cd4-83cf-dd8388c32b47	POST	undefined	/register
+20240527	21:44:26	516dca51-370e-4613-b9d5-8ded11a3ac95	POST	undefined	/register
+20240527	21:44:40	d2021907-9434-4816-8aaf-c38394f2ca4b	POST	undefined	/register
+20240527	21:44:48	15e2d6d4-589b-4f4d-8fb4-e131c8ed75fd	POST	undefined	/register

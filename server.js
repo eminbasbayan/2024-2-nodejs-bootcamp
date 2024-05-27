@@ -1,7 +1,6 @@
 const path = require("node:path");
 const express = require("express");
 const cors = require("cors");
-const fs = require("fs");
 const app = express();
 const errorHandler = require("./middleware/errorHandler");
 const reqHandler = require("./middleware/reqHandler");
@@ -37,6 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 // routes
 app.use("/", require("./routes/route.js"));
 app.use("/products", require("./routes/api/products.js"));
+app.use("/register", require("./routes/register.js"));
 
 app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
