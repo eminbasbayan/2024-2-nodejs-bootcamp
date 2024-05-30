@@ -31,7 +31,7 @@ const handleLogin = async (req, res) => {
       process.env.ACCESS_TOKEN_SECRET,
       {
         algorithm: "HS256",
-        expiresIn: "30s",
+        expiresIn: "2m",
       }
     );
 

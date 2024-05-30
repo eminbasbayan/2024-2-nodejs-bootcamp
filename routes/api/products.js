@@ -1,4 +1,6 @@
 const express = require("express");
+const verifyJWT = require("../../middleware/verifyJWT");
+
 const {
   getAllProducts,
   createNewProduct,
@@ -10,7 +12,7 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(getAllProducts)
+  .get(verifyJWT, getAllProducts)
   .post(createNewProduct)
   .put(updateProduct)
   .delete(deleteProduct);
