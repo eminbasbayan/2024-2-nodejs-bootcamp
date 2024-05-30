@@ -74,3 +74,10 @@
 20240530	22:53:02	d69b4665-c213-4dab-a66d-6133c1b0c531	POST	undefined	/auth
 20240530	22:57:00	dbc1231a-5227-49da-8ca8-849838eaa52f	POST	undefined	/auth
 20240530	23:03:07	45de73db-3c6e-4f37-ab3d-79d7da7d0a03	POST	undefined	/auth
+20240530	23:18:01	d11299fd-eade-42f8-9e32-b2ddf0803cac	GET	undefined	/
+20240530	23:18:12	9a0022f2-c4f7-431c-a592-548a66604c2e	GET	undefined	/api/users
+20240530	23:18:24	b23710a5-d271-424b-ae8e-a15b2909e755	GET	undefined	/api/products
+20240530	23:18:29	9a3d3a3a-0f9c-4095-ac62-c3a6ffa191d0	GET	undefined	/products
+20240530	23:22:51	074bb260-2c93-43c3-94a4-d202a2f537fc	POST	undefined	/auth
+20240530	23:23:02	3b44764a-8c82-4c86-abea-d2251fb613cb	POST	undefined	/auth
+20240530	23:30:16	0537c3fa-aee2-4532-af9b-6aa78ddf11ee	POST	undefined	/auth
