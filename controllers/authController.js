@@ -3,6 +3,8 @@ const usersDB = {
 };
 
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 const handleLogin = async (req, res) => {
   const { user, pwd } = req.body;
@@ -24,7 +26,31 @@ const handleLogin = async (req, res) => {
   const match = await bcrypt.compare(pwd, foundUser.password);
 
   if (match) {
+    const accessToken = jwt.sign(
+      { username: foundUser.username },
+      process.env.ACCESS_TOKEN_SECRET,
+      {
+        algorithm: "HS256",
+        expiresIn: "30s",
+      }
+    );
+
+    const refreshToken = jwt.sign(
+      { username: foundUser.username },
+      process.env.REFRESH_TOKEN_SECRET,
+      {
+        algorithm: "HS256",
+        expiresIn: "1d",
+      }
+    );
+
+    res.cookie("jwt", refreshToken, {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000, // one day
+    });
+
     return res.status(200).json({
+      accessToken,
       success: `user ${user} is log in!`,
     });
   }
