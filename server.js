@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const errorHandler = require("./middleware/errorHandler");
 const reqHandler = require("./middleware/reqHandler");
+const verifyJWT = require("./middleware/verifyJWT.js");
 
 const whiteList = [
   "https://www.google.com.tr",
@@ -35,9 +36,11 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.use("/", require("./routes/route.js"));
-app.use("/products", require("./routes/api/products.js"));
 app.use("/register", require("./routes/register.js"));
 app.use("/auth", require("./routes/auth.js"));
+
+app.use(verifyJWT);
+app.use("/products", require("./routes/api/products.js"));
 
 app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
