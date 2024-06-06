@@ -39,3 +39,7 @@ const handleRefreshToken = (req, res) => {
     }
   );
 };
+
+module.exports = {
+  handleRefreshToken,
+};
