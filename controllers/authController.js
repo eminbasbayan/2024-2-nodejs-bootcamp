@@ -1,6 +1,12 @@
 const usersDB = {
   users: require("../models/users.json"),
+  setUsers: function (data) {
+    this.users = data;
+  },
 };
+
+const fsPromises = require("node:fs/promises");
+const path = require("node:path");
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -42,6 +48,18 @@ const handleLogin = async (req, res) => {
         algorithm: "HS256",
         expiresIn: "1d",
       }
+    );
+
+    const otherUsers = usersDB.users.filter((person) => {
+      return person.username !== foundUser.username;
+    });
+
+    const currentUser = { ...foundUser, refreshToken };
+    usersDB.setUsers([...otherUsers, currentUser]);
+
+    await fsPromises.writeFile(
+      path.join(__dirname, "..", "models", "users.json"),
+      JSON.stringify(usersDB.users)
     );
 
     res.cookie("jwt", refreshToken, {
