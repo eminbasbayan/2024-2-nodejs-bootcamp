@@ -1,6 +1,7 @@
 const path = require("node:path");
 const express = require("express");
 const cors = require("cors");
+var cookieParser = require("cookie-parser");
 const app = express();
 const errorHandler = require("./middleware/errorHandler");
 const reqHandler = require("./middleware/reqHandler");
@@ -27,6 +28,9 @@ const corsOptions = {
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+
+// Middleware for cookies
+app.use(cookieParser());
 
 // Cross Origin Resource Sharing (CORS)
 app.use(cors(corsOptions));
