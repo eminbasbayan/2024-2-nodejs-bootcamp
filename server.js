@@ -38,6 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", require("./routes/route.js"));
 app.use("/register", require("./routes/register.js"));
 app.use("/auth", require("./routes/auth.js"));
+app.use("/refresh", require("./routes/refresh.js"));
 
 app.use(verifyJWT);
 app.use("/products", require("./routes/api/products.js"));
