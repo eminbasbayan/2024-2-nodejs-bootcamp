@@ -138,3 +138,6 @@
 20240607	23:00:44	6305c5f6-095e-4f34-b4da-48d38bc4ffbb	POST	undefined	/products
 20240607	23:22:38	ab40d84c-87d7-4ed1-b3d5-5cb58d068662	POST	undefined	/products
 20240607	23:27:51	0b808ea4-d7c9-48c6-a155-1595b6494127	GET	undefined	/products
+20240607	23:38:43	9e8fdbc0-1bd3-434f-aaa3-dae6fc913dde	GET	undefined	/products
+20240607	23:39:54	6e0ccea8-3339-47ce-9073-cba5b90d5a3c	PUT	undefined	/products
+20240607	23:40:12	342ac248-3611-43f9-88d6-9eb1c86ff8a8	PUT	undefined	/products

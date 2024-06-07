@@ -24,11 +24,21 @@ const createNewProduct = async (req, res) => {
   }
 };
 
-const updateProduct = (req, res) => {
-  res.json({
-    productName: req.body.productName,
-    categoryName: req.body.categoryName,
-  });
+const updateProduct = async (req, res) => {
+  const productId = req.body.id;
+  const updateData = req.body;
+
+  if (!productId) return res.sendStatus(400);
+
+  const updatedProduct = await Product.findByIdAndUpdate(
+    productId,
+    updateData,
+    { new: true }
+  );
+
+  if (!updatedProduct) return res.sendStatus(404);
+
+  res.status(200).json(updatedProduct);
 };
 
 const deleteProduct = (req, res) => {
