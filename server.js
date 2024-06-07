@@ -1,11 +1,23 @@
 const path = require("node:path");
 const express = require("express");
 const cors = require("cors");
-var cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
 const app = express();
 const errorHandler = require("./middleware/errorHandler");
 const reqHandler = require("./middleware/reqHandler");
 const verifyJWT = require("./middleware/verifyJWT.js");
+
+require("dotenv").config();
+
+const mongoDbConnect = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("Connected to mongoDb!");
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 const whiteList = [
   "https://www.google.com.tr",
@@ -57,4 +69,5 @@ app.use(errorHandler);
 const port = 3000;
 app.listen(port, () => {
   console.log(`Server runnig on port ${port}`);
+  mongoDbConnect();
 });
