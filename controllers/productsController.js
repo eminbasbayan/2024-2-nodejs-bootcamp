@@ -25,26 +25,41 @@ const createNewProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
-  const productId = req.body.id;
-  const updateData = req.body;
+  try {
+    const productId = req.body.id;
+    const updateData = req.body;
 
-  if (!productId) return res.sendStatus(400);
+    if (!productId) return res.sendStatus(400);
 
-  const updatedProduct = await Product.findByIdAndUpdate(
-    productId,
-    updateData,
-    { new: true }
-  );
+    const updatedProduct = await Product.findByIdAndUpdate(
+      productId,
+      updateData,
+      { new: true }
+    );
 
-  if (!updatedProduct) return res.sendStatus(404);
+    if (!updatedProduct) return res.sendStatus(404);
 
-  res.status(200).json(updatedProduct);
+    res.status(200).json(updatedProduct);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
 };
 
-const deleteProduct = (req, res) => {
-  res.json({
-    id: req.body.id,
-  });
+const deleteProduct = async (req, res) => {
+  try {
+    const productId = req.body.id;
+
+    if (!productId) return res.sendStatus(400);
+
+    const deletedProduct = await Product.findByIdAndDelete(productId);
+
+    if (!deletedProduct) return res.sendStatus(404);
+
+    res.status(200).json({ message: "Ürün Başarıyla Silindi!" });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const getProductById = (req, res) => {
