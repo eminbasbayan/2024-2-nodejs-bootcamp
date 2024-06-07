@@ -2,8 +2,14 @@ const data = {};
 data.products = require("../models/products.json");
 const Product = require("../models/Product");
 
-const getAllProducts = (req, res) => {
-  res.json(data.products);
+const getAllProducts = async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.status(200).json(products);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
 };
 
 const createNewProduct = async (req, res) => {
@@ -14,6 +20,7 @@ const createNewProduct = async (req, res) => {
     res.sendStatus(201);
   } catch (err) {
     console.log(err);
+    res.sendStatus(500);
   }
 };
 
