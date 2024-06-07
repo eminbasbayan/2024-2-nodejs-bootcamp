@@ -132,3 +132,7 @@
 20240606	22:50:53	049d2043-772d-438b-ae7a-1d6370866d9f	POST	undefined	/auth
 20240607	00:02:17	8eaa03a0-6005-417f-98c6-cd86319db431	GET	undefined	/logout
 20240607	00:02:29	c082eacd-0052-456c-b353-d2f2e131eccc	GET	undefined	/logout
+20240607	22:57:33	480a8f21-2a74-4616-912d-8319c74c78af	POST	undefined	/products
+20240607	22:58:36	ed35bd89-bc38-4ae6-931a-18330946f829	POST	undefined	/auth
+20240607	22:59:37	02c8c2b3-5c72-440b-add8-250eae5923f8	POST	undefined	/auth
+20240607	23:00:44	6305c5f6-095e-4f34-b4da-48d38bc4ffbb	POST	undefined	/products

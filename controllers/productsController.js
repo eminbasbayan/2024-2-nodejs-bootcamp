@@ -1,15 +1,20 @@
 const data = {};
 data.products = require("../models/products.json");
+const Product = require("../models/Product");
 
 const getAllProducts = (req, res) => {
   res.json(data.products);
 };
 
-const createNewProduct = (req, res) => {
-  res.json({
-    productName: req.body.productName,
-    categoryName: req.body.categoryName,
-  });
+const createNewProduct = async (req, res) => {
+  try {
+    const newProduct = new Product(req.body);
+    await newProduct.save();
+
+    res.sendStatus(201);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const updateProduct = (req, res) => {
