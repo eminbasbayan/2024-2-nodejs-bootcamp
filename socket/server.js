@@ -6,6 +6,10 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
+
 wss.on("connection", (ws) => {
   console.log("Bir kullanici bağlandi!");
 
