@@ -4,18 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebSocket Project</title>
+    <style>
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        padding: 8px;
+        margin-bottom: 10px;
+        background-color: #f4f4f4;
+      }
+      input {
+        padding: 10px;
+        width: 300px;
+      }
+      button {
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
+    <form id="form">
+      <input id="input" type="text" autocomplete="off" />
+      <button>Gönder</button>
+    </form>
+
+    <ul id="messages"></ul>
+
+    <script src="/socket.io/socket.io.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const socket = new WebSocket(`ws://${window.location.host}`);
-      
-        socket.addEventListener("open", () => {
-          console.log("Bağlanti açildi!");
+        const socket = io();
+
+        socket.on("message", (message) => {
+          const item = document.createElement("li");
+          item.textContent = message;
+          document.getElementById("messages").appendChild(item);
         });
 
-        socket.addEventListener("close", () => {
-          console.log("Bağlanti kapandi!");
+        const form = document.getElementById("form");
+        const input = document.getElementById("input");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (!input.value.trim()) {
+            return;
+          }
+          socket.emit("message", input.value);
+          input.value = "";
         });
       });
     </script>
