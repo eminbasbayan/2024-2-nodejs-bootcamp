@@ -149,3 +149,17 @@
 20240607	23:48:05	edf9ae5e-dea4-46ce-b662-f3f8a799fec1	POST	undefined	/products
 20240607	23:48:09	f0dce4b9-ce8c-4d3f-bddd-5bfad6fcebf2	GET	undefined	/products
 20240607	23:48:18	e97978bf-a257-4a61-93b7-d1fdc4b7d1af	DELETE	undefined	/products
+20240729	22:25:08	40f73639-45f7-4dff-8ab3-482e04e1e46b	GET	undefined	/
+20240729	22:25:08	5e1a9416-8eb4-47a5-a170-4ad8060be9f4	GET	undefined	/favicon.ico
+20240729	22:25:25	61bb6c4b-9fd4-45b2-a319-ac72b2b4d365	GET	undefined	/payment
+20240729	22:25:25	4e8edb3c-15be-4e3b-ba09-8d545748b3f7	GET	undefined	/favicon.ico
+20240729	22:25:49	3a281d59-8a46-462a-a9dd-83e8799e023f	GET	undefined	/payment
+20240729	22:25:49	c81c7710-c8d4-4f50-a1b8-18471e169574	GET	undefined	/favicon.ico
+20240729	22:31:30	4a85559c-8231-40f2-aefd-dcb90a405107	GET	undefined	/payment.html
+20240729	22:34:49	f2309bc9-bfb4-4853-a730-661b7889bf17	GET	undefined	/payment
+20240729	22:35:34	9e8be90d-ae58-424d-bfa8-34ad0e3ace96	GET	undefined	/payment
+20240729	22:35:56	0d64488d-ec4e-4433-807f-fc3975d601f6	GET	undefined	/payment
+20240729	22:36:39	ac50fa6e-8b68-4ce0-a0ca-a6ea96c32f3a	GET	undefined	/payment
+20240729	22:39:11	8055cc0d-41d3-44fd-930f-134273671cd7	GET	undefined	/payment
+20240729	22:59:29	2d6adb27-58bb-4e07-bce0-03c8b82bbeaf	GET	undefined	/payment
+20240729	22:59:42	57ad8950-1a82-4727-9c86-ff5bb22d4d1c	POST	http://localhost:3000	/stripe

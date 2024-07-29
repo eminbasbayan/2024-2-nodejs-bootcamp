@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Page</title>
+    <style>
+      .product-container {
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      .product-container img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product-container">
+      <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+      <div class="product-details">
+        <h2>Product Name</h2>
+        <p>$10.00</p>
+      </div>
+      <div class="checkout">
+        <button class="btn btn-lg" id="checkout-button">Buy Now</button>
+      </div>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      const stripePublicKey =
+        "pk_test_51PhzgzGGMCwmm25AaSvnyBsniqiFN55lvjXuUmXQJ00eXKGFsc39qVV8QJXzuf0jfDwwi7LrUmzTwhBVkI026JPn00RMvI6YTe";
+      const apiUrl = "http://localhost:3000";
+
+      const checkoutButton = document.getElementById("checkout-button");
+
+      const product = { name: "Product Name", price: 10, quantity: 1 };
+
+      const stripe = Stripe(stripePublicKey);
+
+      checkoutButton.addEventListener("click", async () => {
+        const body = {
+          products: [product],
+          user: { email: "customer@example.coms" },
+        };
+
+        try {
+          const res = await fetch(`${apiUrl}/stripe`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          });
+
+          if (!res.ok) {
+            alert("Payment Failed.");
+            return;
+          }
+
+          const session = await res.json();
+
+          const result = await stripe.redirectToCheckout({
+            sessionId: session.id,
+          });
+
+          if (result.error) {
+            throw new Error(result.error.message);
+          }
+          
+        } catch (error) {
+          console.log(error);
+          alert("Payment Failed.");
+        }
+      });
+    </script>
+  </body>
+</html>

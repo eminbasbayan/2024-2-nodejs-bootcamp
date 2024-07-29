@@ -20,6 +20,11 @@ router.get("/", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "..", "views", "index.html"));
 });
 
+// payment.html dosyasını işleyen route
+router.get("/payment", (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, "..", "views", "payment.html"));
+});
+
 // form verilerini işleyen route
 router.post("/submit-form", (req, res) => {
   const username = req.body.username;

@@ -57,7 +57,7 @@ app.use("/auth", require("./routes/auth.js"));
 app.use("/logout", require("./routes/logout.js"));
 app.use("/refresh", require("./routes/refresh.js"));
 
-app.use(verifyJWT);
+// app.use(verifyJWT);
 app.use("/products", require("./routes/api/products.js"));
 
 app.all("*", (req, res) => {
