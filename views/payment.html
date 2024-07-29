@@ -40,14 +40,14 @@
 
       const checkoutButton = document.getElementById("checkout-button");
 
-      const product = { name: "Product Name", price: 10, quantity: 1 };
+      const product = { name: "Çanta", price: 10000, quantity: 1 };
 
       const stripe = Stripe(stripePublicKey);
 
       checkoutButton.addEventListener("click", async () => {
         const body = {
           products: [product],
-          user: { email: "customer@example.coms" },
+          user: { email: "customer@example.com" },
         };
 
         try {
@@ -71,7 +71,7 @@
           if (result.error) {
             throw new Error(result.error.message);
           }
-          
+
         } catch (error) {
           console.log(error);
           alert("Payment Failed.");
