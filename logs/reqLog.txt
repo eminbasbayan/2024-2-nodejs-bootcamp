@@ -175,3 +175,7 @@
 20240729	23:37:49	fe80460a-f936-4b8a-80e0-7463fdb834b5	GET	undefined	/success
 20240729	23:39:16	e5f3313a-eb7e-4079-aac7-7fd5d256372d	GET	undefined	/payment
 20240729	23:39:18	5f6946ad-8446-4161-ace4-8a2b43d77e72	POST	http://localhost:3000	/stripe
+20240814	11:53:24	241276b4-e5f8-442f-aad1-0bd00d4b6166	GET	undefined	/payment-iyzico
+20240814	11:53:25	e3e90ba4-b3df-43ed-b384-7a600fc6626f	POST	http://localhost:3000	/iyzico
+20240814	11:53:38	83857969-5781-4a84-b4cd-99f44030d32c	POST	null	/iyzico/callback
+20240814	11:53:38	e551e418-25c3-43df-888b-9f4516db11d2	GET	undefined	/success

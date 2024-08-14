@@ -25,6 +25,11 @@ router.get("/payment", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "..", "views", "payment.html"));
 });
 
+// payment-iyzico.html dosyasını işleyen route
+router.get("/payment-iyzico", (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, "..", "views", "payment-iyzico.html"));
+});
+
 // form verilerini işleyen route
 router.post("/submit-form", (req, res) => {
   const username = req.body.username;

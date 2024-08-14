@@ -24,6 +24,7 @@ const whiteList = [
   "https://bilgisayargenetigi.com",
   "http://localhost:3000",
   "http://127.0.0.1:5500",
+  "null"
 ];
 
 app.use(reqHandler);
@@ -57,6 +58,8 @@ app.use("/auth", require("./routes/auth.js"));
 app.use("/logout", require("./routes/logout.js"));
 app.use("/refresh", require("./routes/refresh.js"));
 app.use("/stripe", require("./routes/stripe.js"));
+app.use("/iyzico", require("./routes/iyzico.js"));
+
 
 // app.use(verifyJWT);
 app.use("/products", require("./routes/api/products.js"));
